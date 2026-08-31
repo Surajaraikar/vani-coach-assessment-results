@@ -38,20 +38,17 @@ export default function HomeScreen({ onExperienceVani }: HomeScreenProps) {
         <View style={[styles.hero, isCompact && styles.compactHero]}>
           <View style={styles.heroCopy}>
             <View style={styles.kicker}><View style={styles.kickerDot} /><Text style={styles.kickerText}>AI-POWERED COMMUNICATION COACHING</Text></View>
-            <Text style={styles.title}>Communication that{`\n`}makes people <Text style={styles.titleAccent}>perform</Text>{`\n`}better.</Text>
-            <Text style={styles.description}>Personalized AI coaching that helps teams communicate clearly, confidently and effectively.</Text>
+            <Text style={[styles.title, isCompact && styles.compactTitle]}>Communication that{`\n`}makes people <Text style={styles.titleAccent}>perform</Text>{`\n`}better.</Text>
+            <Text style={[styles.description, isCompact && styles.compactDescription]}>Personalized AI coaching that helps teams communicate clearly, confidently and effectively.</Text>
             <View style={styles.actions}>
               <Pressable onPress={onExperienceVani} style={styles.primaryButton} accessibilityRole="button" accessibilityLabel="Experience Vani and view assessment results">
                 <Text style={styles.primaryButtonText}>Experience Vani</Text>
                 <Text style={styles.primaryArrow}>↗</Text>
               </Pressable>
-              <Pressable style={styles.secondaryButton} accessibilityRole="button" accessibilityLabel="See how Vani works">
-                <Text style={styles.secondaryButtonText}>See how it works</Text><Text style={styles.secondaryArrow}>→</Text>
-              </Pressable>
             </View>
           </View>
 
-          <View style={styles.illustrationArea} accessible accessibilityLabel="Illustration of Vani communication coaching on a mobile phone">
+          <View style={[styles.illustrationArea, isCompact && styles.compactIllustration]} accessible accessibilityLabel="Illustration of Vani communication coaching on a mobile phone">
             <View style={styles.glow} />
             <View style={styles.phone}>
               <View style={styles.phoneNotch} />
@@ -80,7 +77,7 @@ function Metric({ value, label }: { value: string; label: string }) {
 }
 
 const styles = StyleSheet.create({
-  safeArea: { backgroundColor: "#F8F7F3", flex: 1 },
+  safeArea: { backgroundColor: "#F7F8FC", flex: 1 },
   scrollContent: { flexGrow: 1, paddingBottom: 40, paddingHorizontal: "8%" },
   navigation: { alignItems: "center", flexDirection: "row", justifyContent: "space-between", paddingTop: 24 },
   logo: { color: "#20263A", fontSize: 22, fontWeight: "900", letterSpacing: 3 },
@@ -89,22 +86,22 @@ const styles = StyleSheet.create({
   demoButton: { borderColor: "#D9D8D1", borderRadius: 99, borderWidth: 1, paddingHorizontal: 18, paddingVertical: 10 },
   demoButtonText: { color: "#20263A", fontSize: 12, fontWeight: "800" },
   hero: { alignItems: "center", flex: 1, flexDirection: "row", gap: 30, justifyContent: "space-between", minHeight: 560, paddingVertical: 58 },
-  compactHero: { flexDirection: "column", gap: 10, paddingTop: 45 },
+  compactHero: { flexDirection: "column", gap: 0, paddingTop: 45 },
   heroCopy: { flex: 1, maxWidth: 590 },
   kicker: { alignItems: "center", alignSelf: "flex-start", backgroundColor: "#FFF0E5", borderRadius: 99, flexDirection: "row", paddingHorizontal: 12, paddingVertical: 8 },
   kickerDot: { backgroundColor: "#E97632", borderRadius: 4, height: 7, marginRight: 7, width: 7 },
   kickerText: { color: "#B45722", fontSize: 10, fontWeight: "900", letterSpacing: 1 },
   title: { color: "#20263A", fontSize: 55, fontWeight: "900", letterSpacing: -2, lineHeight: 61, marginTop: 24 },
+  compactTitle: { fontSize: 39, letterSpacing: -1, lineHeight: 44, marginTop: 20 },
   titleAccent: { color: "#E97632" },
   description: { color: "#697186", fontSize: 17, lineHeight: 26, marginTop: 22, maxWidth: 480 },
-  actions: { alignItems: "center", flexDirection: "row", flexWrap: "wrap", gap: 12, marginTop: 32 },
+  compactDescription: { fontSize: 15, lineHeight: 23, marginTop: 17 },
+  actions: { alignItems: "center", flexDirection: "row", marginTop: 32 },
   primaryButton: { alignItems: "center", backgroundColor: "#20263A", borderRadius: 9, flexDirection: "row", paddingHorizontal: 20, paddingVertical: 14 },
   primaryButtonText: { color: "#FFFFFF", fontSize: 13, fontWeight: "800" },
   primaryArrow: { color: "#F6A56D", fontSize: 17, marginLeft: 10 },
-  secondaryButton: { alignItems: "center", flexDirection: "row", paddingHorizontal: 10, paddingVertical: 14 },
-  secondaryButtonText: { color: "#20263A", fontSize: 13, fontWeight: "800" },
-  secondaryArrow: { color: "#E97632", fontSize: 19, marginLeft: 8 },
   illustrationArea: { alignItems: "center", flex: 0.8, justifyContent: "center", minHeight: 500, minWidth: 280 },
+  compactIllustration: { minHeight: 450, minWidth: 0, width: "100%" },
   glow: { backgroundColor: "#FFD5B5", borderRadius: 180, height: 350, opacity: 0.45, position: "absolute", transform: [{ rotate: "18deg" }], width: 280 },
   phone: { backgroundColor: "#20263A", borderColor: "#40465A", borderRadius: 35, borderWidth: 7, elevation: 12, height: 470, overflow: "hidden", padding: 20, shadowColor: "#252B42", shadowOffset: { height: 16, width: 4 }, shadowOpacity: 0.25, shadowRadius: 22, width: 255 },
   phoneNotch: { alignSelf: "center", backgroundColor: "#0E1220", borderRadius: 6, height: 7, position: "absolute", top: 8, width: 70 },
@@ -127,8 +124,8 @@ const styles = StyleSheet.create({
   phoneBottom: { alignItems: "center", bottom: 16, flexDirection: "row", justifyContent: "space-around", left: 20, position: "absolute", right: 20 },
   bottomIcon: { color: "#777F92", fontSize: 19 },
   bottomIconActive: { color: "#F28A4A", fontSize: 19 },
-  metrics: { borderColor: "#E4E2DB", borderTopWidth: 1, flexDirection: "row", gap: 46, paddingTop: 25 },
-  metric: { alignItems: "flex-start", flexDirection: "row", gap: 9 },
+  metrics: { borderColor: "#E1E5EF", borderTopWidth: 1, flexDirection: "row", flexWrap: "wrap", justifyContent: "space-between", paddingTop: 25, rowGap: 18 },
+  metric: { alignItems: "center", flexDirection: "row", gap: 9, minWidth: 125 },
   metricValue: { color: "#20263A", fontSize: 25, fontWeight: "900" },
   metricLabel: { alignSelf: "center", color: "#7A8191", fontSize: 12 },
 });

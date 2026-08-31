@@ -19,24 +19,26 @@ export default function AssessmentResultsScreen() {
   return (
     <SafeAreaView style={styles.safeArea}>
       <StatusBar barStyle="dark-content" backgroundColor="#F5F7FB" />
+      <View style={styles.fixedHeader}>
+        <Text style={styles.eyebrow}>VANI COACH</Text>
+        <Text style={styles.title}>Assessment Results</Text>
+        <Text style={styles.subtitle}>Review your performance and feedback</Text>
+      </View>
       <FlatList
         data={completedAssessments}
         keyExtractor={(item) => item.id}
         renderItem={({ item }) => <AssessmentCard assessment={item} />}
         contentContainerStyle={[styles.content, completedAssessments.length === 0 && styles.emptyContent]}
         ListHeaderComponent={
-          <View style={styles.header}>
-            <Text style={styles.eyebrow}>VANI COACH</Text>
-            <Text style={styles.title}>Assessment Results</Text>
-            <Text style={styles.subtitle}>Review your performance and feedback</Text>
-            {completedAssessments.length > 0 && (
+          completedAssessments.length > 0 ? (
+            <View style={styles.listHeader}>
               <View style={styles.summary}>
                 <View><Text style={styles.summaryLabel}>COMPLETED</Text><Text style={styles.summaryValue}>{completedAssessments.length}</Text></View>
                 <View style={styles.summaryDivider} />
                 <View><Text style={styles.summaryLabel}>AVERAGE SCORE</Text><Text style={styles.summaryValue}>{averageScore ?? "—"}<Text style={styles.summaryOutOf}> / 100</Text></Text></View>
               </View>
-            )}
-          </View>
+            </View>
+          ) : null
         }
         ListEmptyComponent={<EmptyState />}
         showsVerticalScrollIndicator={false}
@@ -51,7 +53,8 @@ const styles = StyleSheet.create({
   safeArea: { backgroundColor: "#F5F7FB", flex: 1 },
   content: { paddingBottom: 24, paddingHorizontal: 20 },
   emptyContent: { flexGrow: 1 },
-  header: { paddingBottom: 22, paddingTop: 20 },
+  fixedHeader: { backgroundColor: "#F5F7FB", paddingHorizontal: 20, paddingBottom: 18, paddingTop: 20, zIndex: 1 },
+  listHeader: { paddingBottom: 18 },
   eyebrow: { color: "#5265D7", fontSize: 11, fontWeight: "800", letterSpacing: 1.5 },
   title: { color: "#18243A", fontSize: 29, fontWeight: "800", marginTop: 8 },
   subtitle: { color: "#7D8799", fontSize: 14, marginTop: 5 },

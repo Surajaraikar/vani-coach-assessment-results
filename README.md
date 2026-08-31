@@ -9,7 +9,7 @@ npm install
 npm start
 ```
 
-Use the Expo QR code, or run `npm run android`, `npm run ios`, or `npm run web`. Type-check with `npm run typecheck`.
+Use the Expo QR code, or run `npm run android`, `npm run ios`, or `npm run web` to open the app in Chrome. Type-check with `npm run typecheck`.
 
 ## Architecture
 

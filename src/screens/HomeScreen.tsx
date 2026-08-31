@@ -95,7 +95,7 @@ const styles = StyleSheet.create({
   titleAccent: { color: "#E97632" },
   description: { color: "#697186", fontSize: 17, lineHeight: 26, marginTop: 22, maxWidth: 480 },
   compactDescription: { fontSize: 15, lineHeight: 23, marginTop: 17 },
-  actions: { alignItems: "center", flexDirection: "row", marginTop: 32 },
+  actions: { alignItems: "center", flexDirection: "row", marginTop: 16 },
   primaryButton: { alignItems: "center", backgroundColor: "#20263A", borderRadius: 9, flexDirection: "row", paddingHorizontal: 20, paddingVertical: 14 },
   primaryButtonText: { color: "#FFFFFF", fontSize: 13, fontWeight: "800" },
   primaryArrow: { color: "#F6A56D", fontSize: 17, marginLeft: 10 },

@@ -1,5 +1,6 @@
 import React, { useMemo } from "react";
-import { FlatList, SafeAreaView, StatusBar, StyleSheet, Text, View } from "react-native";
+import { FlatList, StatusBar, StyleSheet, Text, View } from "react-native";
+import { SafeAreaView } from "react-native-safe-area-context";
 
 import AssessmentCard from "../components/AssessmentCard";
 import EmptyState from "../components/EmptyState";

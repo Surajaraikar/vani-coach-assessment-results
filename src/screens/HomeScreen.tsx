@@ -103,7 +103,7 @@ const styles = StyleSheet.create({
   primaryButtonText: { color: colors.white, ...typography.button },
   primaryArrow: { color: colors.orangeAccent, fontSize: 17, marginLeft: 10 },
   illustrationArea: { alignItems: "center", flex: 0.8, justifyContent: "center", minHeight: 500, minWidth: 280 },
-  compactIllustration: { minHeight: 450, minWidth: 0, width: "100%" },
+  compactIllustration: { marginTop: 24, minHeight: 450, minWidth: 0, width: "100%" },
   glow: { backgroundColor: "#FFD9BE", borderRadius: 180, height: 350, opacity: 0.45, position: "absolute", transform: [{ rotate: "18deg" }], width: 280 },
   phone: { backgroundColor: colors.primaryText, borderColor: "#40465A", borderRadius: 35, borderWidth: 7, elevation: 12, height: 470, overflow: "hidden", padding: 20, shadowColor: colors.primaryText, shadowOffset: { height: 16, width: 4 }, shadowOpacity: 0.25, shadowRadius: 22, width: 255 },
   phoneNotch: { alignSelf: "center", backgroundColor: "#0E1220", borderRadius: 6, height: 7, position: "absolute", top: 8, width: 70 },

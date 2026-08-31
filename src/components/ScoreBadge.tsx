@@ -2,6 +2,7 @@ import React from "react";
 import { StyleSheet, Text, View } from "react-native";
 
 import { Performance } from "../utils/assessment";
+import { colors } from "../theme/colors";
 
 interface ScoreBadgeProps {
   performance: Performance;
@@ -32,12 +33,12 @@ const styles = StyleSheet.create({
     paddingHorizontal: 10,
     paddingVertical: 6,
   },
-  good: { backgroundColor: "#E6F8EF" },
-  needsImprovement: { backgroundColor: "#FFF2E5" },
+  good: { backgroundColor: colors.successBackground },
+  needsImprovement: { backgroundColor: colors.lightOrange },
   dot: { borderRadius: 4, height: 7, marginRight: 6, width: 7 },
-  goodDot: { backgroundColor: "#159A62" },
-  needsDot: { backgroundColor: "#D97918" },
+  goodDot: { backgroundColor: colors.success },
+  needsDot: { backgroundColor: colors.orangeAccent },
   text: { fontSize: 12, fontWeight: "700" },
-  goodText: { color: "#087344" },
-  needsText: { color: "#A65308" },
+  goodText: { color: colors.success },
+  needsText: { color: "#B35D27" },
 });

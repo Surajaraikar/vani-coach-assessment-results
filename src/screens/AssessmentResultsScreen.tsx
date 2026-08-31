@@ -5,6 +5,9 @@ import AssessmentCard from "../components/AssessmentCard";
 import EmptyState from "../components/EmptyState";
 import { assessments } from "../data/assessments";
 import { getAverageScore } from "../utils/assessment";
+import { colors } from "../theme/colors";
+import { spacing } from "../theme/spacing";
+import { typography } from "../theme/typography";
 
 export default function AssessmentResultsScreen() {
   const completedAssessments = useMemo(
@@ -18,7 +21,7 @@ export default function AssessmentResultsScreen() {
 
   return (
     <SafeAreaView style={styles.safeArea}>
-      <StatusBar barStyle="dark-content" backgroundColor="#F5F7FB" />
+      <StatusBar barStyle="dark-content" backgroundColor={colors.background} />
       <View style={styles.fixedHeader}>
         <Text style={styles.eyebrow}>VANI COACH</Text>
         <Text style={styles.title}>Assessment Results</Text>
@@ -50,30 +53,30 @@ export default function AssessmentResultsScreen() {
 }
 
 const styles = StyleSheet.create({
-  safeArea: { backgroundColor: "#F5F7FB", flex: 1 },
-  content: { paddingBottom: 24, paddingHorizontal: 20 },
+  safeArea: { backgroundColor: colors.background, flex: 1 },
+  content: { paddingBottom: spacing.lg, paddingHorizontal: spacing.page },
   emptyContent: { flexGrow: 1 },
   fixedHeader: {
-    backgroundColor: "#F5F7FB",
-    borderBottomColor: "#E4E8F0",
+    backgroundColor: colors.background,
+    borderBottomColor: colors.border,
     borderBottomWidth: 1,
     elevation: 4,
-    paddingHorizontal: 20,
+    paddingHorizontal: spacing.page,
     paddingBottom: 18,
     paddingTop: 20,
-    shadowColor: "#18243A",
+    shadowColor: colors.primaryText,
     shadowOffset: { height: 3, width: 0 },
     shadowOpacity: 0.08,
     shadowRadius: 8,
     zIndex: 1,
   },
   listHeader: { paddingBottom: 18 },
-  eyebrow: { color: "#5265D7", fontSize: 11, fontWeight: "800", letterSpacing: 1.5 },
-  title: { color: "#18243A", fontSize: 29, fontWeight: "800", marginTop: 8 },
-  subtitle: { color: "#7D8799", fontSize: 14, marginTop: 5 },
-  summary: { alignItems: "center", backgroundColor: "#FFFFFF", borderColor: "#E7EBF2", borderRadius: 16, borderWidth: 1, flexDirection: "row", marginTop: 22, padding: 16 },
-  summaryLabel: { color: "#8B94A5", fontSize: 10, fontWeight: "800", letterSpacing: 0.6 },
-  summaryValue: { color: "#18243A", fontSize: 24, fontWeight: "800", marginTop: 3 },
-  summaryOutOf: { color: "#8B94A5", fontSize: 12, fontWeight: "500" },
-  summaryDivider: { backgroundColor: "#E7EBF2", height: 38, marginHorizontal: 28, width: 1 },
+  eyebrow: { color: colors.orangeAccent, ...typography.eyebrow },
+  title: { color: colors.primaryText, ...typography.pageTitle, marginTop: spacing.sm },
+  subtitle: { color: colors.secondaryText, ...typography.body, marginTop: 5 },
+  summary: { alignItems: "center", backgroundColor: colors.card, borderColor: colors.border, borderRadius: 16, borderWidth: 1, flexDirection: "row", marginTop: spacing.lg, padding: spacing.md },
+  summaryLabel: { color: colors.secondaryText, fontSize: 10, fontWeight: "800", letterSpacing: 0.6 },
+  summaryValue: { color: colors.primaryText, fontSize: 24, fontWeight: "800", marginTop: 3 },
+  summaryOutOf: { color: colors.secondaryText, fontSize: 12, fontWeight: "500" },
+  summaryDivider: { backgroundColor: colors.border, height: 38, marginHorizontal: 28, width: 1 },
 });

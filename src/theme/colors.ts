@@ -1,0 +1,16 @@
+export const colors = {
+  background: "#F7F8FC",
+  primaryText: "#1D2438",
+  secondaryText: "#7B8499",
+  orangeAccent: "#E67A3F",
+  lightOrange: "#FFF1E7",
+  blueAccent: "#5966D6",
+  card: "#FFFFFF",
+  border: "#E7EAF0",
+  success: "#3F9B6D",
+  successBackground: "#EAF7F0",
+  darkNavy: "#1D2438",
+  white: "#FFFFFF",
+  phoneMuted: "#A9B0C0",
+  phoneCard: "#30374B",
+} as const;

@@ -65,7 +65,6 @@ export default function HomeScreen({ onExperienceVani }: HomeScreenProps) {
         <View style={styles.metrics}>
           <Metric value="120+" label="Clients" />
           <Metric value="34K+" label="Employees" />
-          <Metric value="∞" label="Enterprise Ready" />
         </View>
       </ScrollView>
     </SafeAreaView>
